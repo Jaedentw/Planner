@@ -5,9 +5,13 @@ const loginEmailPassword = async () => {
   const email = "email"
   const password = "password"
 
-  const userCredentials = await signInWithEmailAndPassword(authRef, email, password)
-
-  return userCredentials
+  try {
+    const userCredentials = await signInWithEmailAndPassword(authRef, email, password)
+    console.log(userCredentials)
+  }
+  catch(error) {
+    console.log(error)
+  }
 }
 
 module.exports = [loginEmailPassword]
